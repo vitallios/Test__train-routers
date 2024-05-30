@@ -12,6 +12,10 @@
  -webkit-transition: all 0.3s;
 }
 
+body{
+ height: 80vh;
+}
+
 button {
  background: none;
  border: none;
