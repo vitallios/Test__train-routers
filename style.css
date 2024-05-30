@@ -13,7 +13,6 @@
 }
 
 body{
- min-height: 80vh;
 height: 100%;
 }
 
@@ -43,7 +42,7 @@ a {
 
 .container {
  max-width: 1440px;
- width:95%;
+ width: 100%;
  padding: 0 16px;
  margin: 0 auto;
 }
