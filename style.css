@@ -224,8 +224,7 @@ progress[value]::-webkit-progress-value {
  padding: 15px 0;
  gap: 8px;
  flex-direction: column;
- height: 100%;
- min-height: 75vh;
+ height: 100%;
  max-height: 77vh;
  overflow-y: scroll;
 }
