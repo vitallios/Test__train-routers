@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <title>Таблица отправления транспорта</title>
+</head>
+
+<body>
+ <header>
+  <div class="container">
+   <nav class="flex nav">
+    <ul class="flex nav__list">
+     <li class="nav__list-item">
+      <a href="/">
+       <svg width="107" height="32" viewBox="0 0 107 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+         d="M26.7311 9.0173C28.635 9.0173 30.2691 10.1691 30.9705 11.8118H22.4917C23.193 10.1691 24.8271 9.0173 26.7311 9.0173ZM26.7311 5.42434C22.1971 5.42434 18.5215 9.08843 18.5215 13.6083C18.5215 18.1282 22.1971 21.7923 26.7311 21.7923C28.9809 21.7923 31.0224 20.8877 32.5035 19.4276L29.9692 16.8729C29.1353 17.6949 27.9941 18.1993 26.7311 18.1993C24.8271 18.1993 23.193 17.0475 22.4917 15.4048H34.7404C34.8877 14.7075 34.931 14.3142 34.9406 13.6083C34.9406 9.08843 31.2651 5.42434 26.7311 5.42434Z"
+         fill="#4094F7" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+         d="M79.2064 9.0173C76.663 9.0173 74.6011 11.0728 74.6011 13.6083C74.6011 16.1438 76.663 18.1993 79.2064 18.1993H83.8118V13.6083C83.8118 11.0728 81.7499 9.0173 79.2064 9.0173ZM70.9969 13.6083C70.9969 9.08843 74.6724 5.42434 79.2064 5.42434C83.7404 5.42434 87.416 9.08843 87.416 13.6083V21.7923H79.2064C74.6724 21.7923 70.9969 18.1282 70.9969 13.6083Z"
+         fill="#4094F7" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+         d="M8.21124 5.42434C8.21068 5.42434 8.21011 5.42434 8.20954 5.42434C3.67554 5.42434 0 9.08843 0 13.6083C0 18.1282 3.67554 21.7923 8.20954 21.7923C12.7435 21.7923 16.4191 18.1282 16.4191 13.6083C16.4191 11.0247 15.2181 8.7207 13.3424 7.22082C15.2181 5.72095 16.4191 3.41695 16.4191 0.833336H12.8149C12.8149 3.36831 10.7539 5.42343 8.21124 5.42434ZM8.21194 9.0173C8.21114 9.0173 8.21034 9.0173 8.20954 9.0173C5.66608 9.0173 3.60419 11.0728 3.60419 13.6083C3.60419 16.1439 5.66608 18.1993 8.20954 18.1993C10.753 18.1993 12.8149 16.1439 12.8149 13.6083C12.8149 11.0736 10.7543 9.0186 8.21194 9.0173ZM3.60419 22.8402C3.60419 25.3758 5.66608 27.4312 8.20954 27.4312C10.753 27.4312 12.8149 25.3758 12.8149 22.8402H16.4191C16.4191 27.3601 12.7435 31.0242 8.20954 31.0242C3.67554 31.0242 0 27.3601 0 22.8402H3.60419Z"
+         fill="#4094F7" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+         d="M37.6438 13.7081V13.7331H37.6438C37.6573 18.2415 41.3277 21.8921 45.8533 21.8921V18.2991C43.3098 18.2991 41.248 16.2437 41.248 13.7081H41.2479V9.0173H44.9022L45.9034 5.42434H41.2479V0.833336H37.6438V13.7081Z"
+         fill="#4094F7" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+         d="M94.1851 13.6083V5.62395H90.5809V13.6083C90.5809 18.1282 94.2565 21.7923 98.7905 21.7923C103.324 21.7923 107 18.1282 107 13.6083V5.62395H103.396V13.6083C103.396 16.1438 101.334 18.1993 98.7905 18.1993C96.247 18.1993 94.1851 16.1438 94.1851 13.6083ZM98.7905 27.4312C96.247 27.4312 94.1851 25.3758 94.1851 22.8402H90.5809C90.5809 27.3601 94.2565 31.0242 98.7905 31.0242C103.324 31.0242 107 27.3601 107 22.8402H103.396C103.396 25.3758 101.334 27.4312 98.7905 27.4312Z"
+         fill="#4094F7" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+         d="M52.6337 16.0036V5.62395H49.0295V16.0036C49.0295 19.2006 51.6293 21.7923 54.8362 21.7923C56.3888 21.7923 57.799 21.1849 58.8409 20.1954C59.8827 21.1849 61.293 21.7923 62.8455 21.7923C66.0525 21.7923 68.6523 19.2006 68.6523 16.0036V5.62395H65.0481V16.0036C65.0481 17.2163 64.062 18.1993 62.8455 18.1993C61.6301 18.1993 60.6446 17.2179 60.643 16.0067C60.643 16.0056 60.643 16.0046 60.643 16.0036V10.4146H57.0388V16.0036C57.0388 17.2163 56.0527 18.1993 54.8362 18.1993C53.6198 18.1993 52.6337 17.2163 52.6337 16.0036Z"
+         fill="#4094F7" />
+       </svg>
+      </a>
+     </li>
+     <li class="nav__list-item">Поездки</li>
+    </ul>
+    <div class="nav__logaut">
+     <a href="/" class="flex nav__logaut-link">
+      Заболоцкий К.О
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path
+        d="M10.7783 5.87608L10.7844 5.88222L12.7844 7.88217C12.7844 7.88219 12.7844 7.8822 12.7844 7.88222C12.8156 7.91347 12.8331 7.95583 12.8331 8C12.8331 8.04417 12.8156 8.08653 12.7844 8.11778C12.7844 8.1178 12.7844 8.11782 12.7844 8.11784L10.7885 10.1137C10.7573 10.1428 10.7161 10.1588 10.6734 10.1585C10.6297 10.1581 10.5879 10.1406 10.557 10.1097C10.5261 10.0788 10.5085 10.037 10.5082 9.99326C10.5078 9.95052 10.5238 9.90932 10.5529 9.87812L11.4108 9.02022L12.2644 8.16667H11.0573H5.99996C5.95576 8.16667 5.91336 8.14911 5.88211 8.11785C5.85085 8.0866 5.83329 8.0442 5.83329 8C5.83329 7.9558 5.85085 7.91341 5.88211 7.88215C5.91336 7.85089 5.95576 7.83334 5.99996 7.83334H11.0573H12.2644L11.4108 6.97978L10.5488 6.11778L10.5489 6.11773L10.5426 6.11169C10.5267 6.09632 10.514 6.07793 10.5053 6.05759C10.4966 6.03726 10.492 6.01539 10.4918 5.99326C10.4916 5.97113 10.4958 5.94918 10.5042 5.9287C10.5126 5.90822 10.5249 5.88961 10.5406 5.87396C10.5562 5.85831 10.5748 5.84593 10.5953 5.83756L10.4081 5.37986L10.5953 5.83755C10.6158 5.82917 10.6378 5.82496 10.6599 5.82515C10.682 5.82534 10.7039 5.82994 10.7242 5.83867L10.9193 5.38452L10.7242 5.83868C10.7445 5.84741 10.7629 5.86011 10.7783 5.87602L10.7783 5.87608ZM3.21544 3.88215C3.2467 3.8509 3.28909 3.83334 3.33329 3.83334C3.3775 3.83334 3.41989 3.8509 3.45114 3.88215C3.4824 3.91341 3.49996 3.9558 3.49996 4V12C3.49996 12.0442 3.4824 12.0866 3.45114 12.1179C3.41989 12.1491 3.37749 12.1667 3.33329 12.1667C3.28909 12.1667 3.2467 12.1491 3.21544 12.1179C3.18419 12.0866 3.16663 12.0442 3.16663 12V4C3.16663 3.9558 3.18419 3.91341 3.21544 3.88215Z"
+        fill="#252C32" stroke="#0E73F6" />
+      </svg>
+     </a>
+    </div>
+   </nav>
+  </div>
+ </header>
+
+ <main>
+  <!--  -->
+  <section class="user-panel">
+
+   <!-- history -->
+   <div class="container">
+    <div class="flex history">
+     <h2 class="history__title">Мои поездки</h2>
+     <button type="submit" class="flex history__add">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289C12.8946 7.48043 13 7.73478 13 8V11H16C16.2652 11 16.5196 11.1054 16.7071 11.2929C16.8946 11.4804 17 11.7348 17 12C17 12.2652 16.8946 12.5196 16.7071 12.7071C16.5196 12.8946 16.2652 13 16 13H13V16C13 16.2652 12.8946 16.5196 12.7071 16.7071C12.5196 16.8946 12.2652 17 12 17C11.7348 17 11.4804 16.8946 11.2929 16.7071C11.1054 16.5196 11 16.2652 11 16V13H8C7.73478 13 7.48043 12.8946 7.29289 12.7071C7.10536 12.5196 7 12.2652 7 12C7 11.7348 7.10536 11.4804 7.29289 11.2929C7.48043 11.1054 7.73478 11 8 11H11V8C11 7.73478 11.1054 7.48043 11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7Z"
+        fill="white" />
+      </svg>
+      Оформить поездку
+     </button>
+    </div>
+    <!--  -->
+   </div>
+   <!-- rout -->
+   <div class="routers__wrap">
+    <div class="pouters__panel">
+     <div class="container">
+      <div class="flex routes__grid">
+       <div class="flex routes">
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="flex routes__item">
+         <span class="routes__text">Период с:</span>
+         <!--  -->
+         <div class="flex routes__elements">
+          <!--  -->
+          <input class="routes__elements-input" name="tripStart" value="2024-07-22" id="tripStart">
+          <!--  -->
+          <div class="routes__input--elements">
+           <button type="submit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M6.293 6.293C6.48053 6.10553 6.73484 6.00021 7 6.00021C7.26516 6.00021 7.51947 6.10553 7.707 6.293L12 10.586L16.293 6.293C16.3852 6.19749 16.4956 6.12131 16.6176 6.0689C16.7396 6.01649 16.8708 5.9889 17.0036 5.98775C17.1364 5.9866 17.2681 6.0119 17.391 6.06218C17.5139 6.11246 17.6255 6.18671 17.7194 6.2806C17.8133 6.3745 17.8875 6.48615 17.9378 6.60905C17.9881 6.73194 18.0134 6.86362 18.0123 6.9964C18.0111 7.12918 17.9835 7.2604 17.9311 7.3824C17.8787 7.50441 17.8025 7.61475 17.707 7.707L13.414 12L17.707 16.293C17.8892 16.4816 17.99 16.7342 17.9877 16.9964C17.9854 17.2586 17.8802 17.5094 17.6948 17.6948C17.5094 17.8802 17.2586 17.9854 16.9964 17.9877C16.7342 17.99 16.4816 17.8892 16.293 17.707L12 13.414L7.707 17.707C7.5184 17.8892 7.2658 17.99 7.0036 17.9877C6.7414 17.9854 6.49059 17.8802 6.30518 17.6948C6.11977 17.5094 6.0146 17.2586 6.01233 16.9964C6.01005 16.7342 6.11084 16.4816 6.293 16.293L10.586 12L6.293 7.707C6.10553 7.51947 6.00021 7.26516 6.00021 7C6.00021 6.73484 6.10553 6.48053 6.293 6.293Z"
+              fill="#B0BABF" />
+            </svg>
+           </button>
+           <button type="submit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M8 4C7.73478 4 7.48043 4.10536 7.29289 4.29289C7.10536 4.48043 7 4.73478 7 5V6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H18C18.5304 20 19.0391 19.7893 19.4142 19.4142C19.7893 19.0391 20 18.5304 20 18V8C20 7.46957 19.7893 6.96086 19.4142 6.58579C19.0391 6.21071 18.5304 6 18 6H17V5C17 4.73478 16.8946 4.48043 16.7071 4.29289C16.5196 4.10536 16.2652 4 16 4C15.7348 4 15.4804 4.10536 15.2929 4.29289C15.1054 4.48043 15 4.73478 15 5V6H9V5C9 4.73478 8.89464 4.48043 8.70711 4.29289C8.51957 4.10536 8.26522 4 8 4ZM8 9C7.73478 9 7.48043 9.10536 7.29289 9.29289C7.10536 9.48043 7 9.73478 7 10C7 10.2652 7.10536 10.5196 7.29289 10.7071C7.48043 10.8946 7.73478 11 8 11H16C16.2652 11 16.5196 10.8946 16.7071 10.7071C16.8946 10.5196 17 10.2652 17 10C17 9.73478 16.8946 9.48043 16.7071 9.29289C16.5196 9.10536 16.2652 9 16 9H8Z"
+              fill="#B0BABF" />
+            </svg>
+           </button>
+          </div>
+          <!--  -->
+         </div>
+         <!--  -->
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="flex routes__item">
+         <span class="routes__text">по:</span>
+         <!--  -->
+         <div class="flex routes__elements">
+          <!--  -->
+          <input class="routes__elements-input" name="tripEnd" value="Выбрать..." id="tripEnd">
+          <!--  -->
+          <div class="routes__input--elements tripEnd__element">
+           <button type="submit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M6.293 6.293C6.48053 6.10553 6.73484 6.00021 7 6.00021C7.26516 6.00021 7.51947 6.10553 7.707 6.293L12 10.586L16.293 6.293C16.3852 6.19749 16.4956 6.12131 16.6176 6.0689C16.7396 6.01649 16.8708 5.9889 17.0036 5.98775C17.1364 5.9866 17.2681 6.0119 17.391 6.06218C17.5139 6.11246 17.6255 6.18671 17.7194 6.2806C17.8133 6.3745 17.8875 6.48615 17.9378 6.60905C17.9881 6.73194 18.0134 6.86362 18.0123 6.9964C18.0111 7.12918 17.9835 7.2604 17.9311 7.3824C17.8787 7.50441 17.8025 7.61475 17.707 7.707L13.414 12L17.707 16.293C17.8892 16.4816 17.99 16.7342 17.9877 16.9964C17.9854 17.2586 17.8802 17.5094 17.6948 17.6948C17.5094 17.8802 17.2586 17.9854 16.9964 17.9877C16.7342 17.99 16.4816 17.8892 16.293 17.707L12 13.414L7.707 17.707C7.5184 17.8892 7.2658 17.99 7.0036 17.9877C6.7414 17.9854 6.49059 17.8802 6.30518 17.6948C6.11977 17.5094 6.0146 17.2586 6.01233 16.9964C6.01005 16.7342 6.11084 16.4816 6.293 16.293L10.586 12L6.293 7.707C6.10553 7.51947 6.00021 7.26516 6.00021 7C6.00021 6.73484 6.10553 6.48053 6.293 6.293Z"
+              fill="#B0BABF" />
+            </svg>
+           </button>
+           <button type="submit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M8 4C7.73478 4 7.48043 4.10536 7.29289 4.29289C7.10536 4.48043 7 4.73478 7 5V6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H18C18.5304 20 19.0391 19.7893 19.4142 19.4142C19.7893 19.0391 20 18.5304 20 18V8C20 7.46957 19.7893 6.96086 19.4142 6.58579C19.0391 6.21071 18.5304 6 18 6H17V5C17 4.73478 16.8946 4.48043 16.7071 4.29289C16.5196 4.10536 16.2652 4 16 4C15.7348 4 15.4804 4.10536 15.2929 4.29289C15.1054 4.48043 15 4.73478 15 5V6H9V5C9 4.73478 8.89464 4.48043 8.70711 4.29289C8.51957 4.10536 8.26522 4 8 4ZM8 9C7.73478 9 7.48043 9.10536 7.29289 9.29289C7.10536 9.48043 7 9.73478 7 10C7 10.2652 7.10536 10.5196 7.29289 10.7071C7.48043 10.8946 7.73478 11 8 11H16C16.2652 11 16.5196 10.8946 16.7071 10.7071C16.8946 10.5196 17 10.2652 17 10C17 9.73478 16.8946 9.48043 16.7071 9.29289C16.5196 9.10536 16.2652 9 16 9H8Z"
+              fill="#B0BABF" />
+            </svg>
+           </button>
+          </div>
+          <!--  -->
+         </div>
+         <!--  -->
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="flex routes__item">
+         <div class="flex routes__elements item__search">
+          <input class="routes__elements-input" name="tripSearch" value="Поиск..." id="tripSearch">
+          <div class="routes__input--elements tripSearch__element">
+           <button type="submit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10 6.00077C8.93913 6.00077 7.92172 6.42219 7.17157 7.17234C6.42143 7.92248 6 8.9399 6 10.0008C6 11.0616 6.42143 12.079 7.17157 12.8292C7.92172 13.5793 8.93913 14.0008 10 14.0008C11.0609 14.0008 12.0783 13.5793 12.8284 12.8292C13.5786 12.079 14 11.0616 14 10.0008C14 8.9399 13.5786 7.92248 12.8284 7.17234C12.0783 6.42219 11.0609 6.00077 10 6.00077ZM4 10.0008C3.99988 9.05647 4.22264 8.12548 4.65017 7.28351C5.0777 6.44154 5.69792 5.71236 6.4604 5.15529C7.22287 4.59822 8.10606 4.22898 9.03815 4.0776C9.97023 3.92622 10.9249 3.99698 11.8245 4.28412C12.724 4.57126 13.5432 5.06667 14.2152 5.73006C14.8872 6.39346 15.3931 7.2061 15.6919 8.1019C15.9906 8.9977 16.0737 9.95136 15.9343 10.8853C15.795 11.8193 15.4372 12.7072 14.89 13.4768L19.707 18.2938C19.8892 18.4824 19.99 18.735 19.9877 18.9972C19.9854 19.2594 19.8802 19.5102 19.6948 19.6956C19.5094 19.881 19.2586 19.9862 18.9964 19.9884C18.7342 19.9907 18.4816 19.8899 18.293 19.7078L13.477 14.8918C12.5794 15.53 11.5233 15.9089 10.4247 15.9869C9.326 16.0648 8.22707 15.8389 7.2483 15.3337C6.26953 14.8286 5.44869 14.0638 4.87572 13.1231C4.30276 12.1824 3.99979 11.1022 4 10.0008Z"
+              fill="#B0BABF" />
+            </svg>
+           </button>
+          </div>
+         </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <button class="flex routes__reset">
+         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+           d="M8.00003 9.414L4.70703 12.707L3.29303 11.293L6.58603 8L3.29303 4.707L4.70703 3.293L8.00003 6.586L11.293 3.293L12.707 4.707L9.41403 8L12.707 11.293L11.293 12.707L8.00003 9.414Z"
+           fill="#4094F7" />
+         </svg>
+         <span class="routes__reset-text">Сбросить все</span>
+        </button>
+
+       </div>
+       <button class="flex routes__checed">
+        <input type="checkbox" name="tripCheced" id="tripCheced">
+        <span class="routes__checed-text">Показать архивные поездки</span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <!--  -->
+    <div class="progress-bar__wrapper">
+     <progress id="progress-bar" value="30" max="100"></progress>
+    </div>
+    <!--  -->
+    <div class="routers__result">
+     <div class="container">
+      <ul class="flex routers__list">
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+       <li class="routers__list-item">
+        <a href="/" class="routers__list-card card">
+         <div class="flex card__wrap">
+           <!--  -->
+           <div class="flex card__info">
+            <div class="flex card__train-number">
+             <span>№ поездки</span>
+             <p>000115</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-data">
+             <span>Дата поездки</span>
+             <div class="flex">
+              <p>
+               <span>22.02.2024</span>
+               <span>-</span>
+               <span>27.02.2024</span>
+              </p>
+             </div>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order">
+              <span>Сумма, план</span>
+              <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex card__train-order-final">
+             <span>Сумма, факт</span>
+             <p>29 400,00</p>
+            </div>
+            <!--  -->
+            <div class="flex cardd__train-city">
+             <span>Город</span>
+             <p>Москва, Ярославль, Ижевск, Владимир</p>
+            </div>
+            <!--  -->
+           </div>
+           <div class="flex card__status">
+            <span>Статус</span>
+            <button>Документы</button>
+           </div>
+           <!--  -->
+         </div>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+
+  </section>
+  <!--  -->
+
+ </main>
+
+</body>
+
+</html>
